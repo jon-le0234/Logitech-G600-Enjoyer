@@ -179,29 +179,51 @@ G HUB without the macros.
 
 Cross-platform scrip to program the G600 using Python: https://github.com/tulth/g600prog
 
-Install Python: https://www.python.org/downloads/
+Install Python 3: https://www.python.org/downloads/
 
-Install prerequisite: 
+Install prerequisites: 
 
 ```
-pip install pyusb
+pip install pyusb libusb
 ```
 
-Clone the repository.
+Windows users will need to install Zadig to replace the mouse driver.
+1. Download Zadig: https://zadig.akeo.ie
+    1. The latest version is 2.9 as of this writing.
+1. Run `zadig-2.9.exe`.
+1. In the toolbar, navigate to `Options > List All Devices`.
+1. In the dropdown menu, select `Gaming Mouse G600 Interface 1`.
+    1. If I understand correctly, `Interface 0` drives the mouse cursor, whereas `Interface 1` is the driver for the buttons.
+1. Under Driver, select `libusb-win32 (v1.4.0.0)`.
+1. Click the `Replace Driver` button.
+
+Download or clone the `g600prog` repository.
 
 ```
 git clone https://github.com/tulth/g600prog
 cd g600prog
 ```
+For Windows, download the `g600prog.py` file provided in this repo under profiles/g600prog. Added a small patch to check if platform is Windows before running a Linux driver command.
 
+#### Windows
+On Windows, use the following command to download the current config from the mouse to your Windows PC:
+```
+python g600prog.py MOUSE current_cfg.json
+```
+
+To upload a new config from your Windows PC to the mouse, use:
+```
+python g600prog.py new_mouse_cfg.json MOUSE
+```
+#### macOS
 On macOS, use the following command to download the current config from the mouse to your Mac:
 ```
 sudo python3 g600prog.py MOUSE current_mouse_cfg.json
 ```
 
-After you've created a new config using the provided template, to upload a new config from your Mac to the mouse, use:
+To upload a new config from your Mac to the mouse, use:
 ```
-sudo python3 g600prog.py new_mouse_cfg.json MOUSE
+sudo python3 g600prog.py default_fnumpad.json MOUSE
 ```
 Here's what the output will look like.
 ```
