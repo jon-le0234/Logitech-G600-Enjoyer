@@ -1,28 +1,24 @@
+![Logitech G600 MMO Gaming Mouse](images/g600-mmo-gaming-mouse-isometric.jpg)
 # Logitech-G600-Enjoyer
 A collection of resources for fans of the tragically discontinued Logitech G600 MMO gaming mouse.
 
-# Love for the G600
-1. https://www.fictiv.com/teardowns/teardown-showdown-logitech-gaming-mouse-edition-g600-mmo-vs-g502-proteus-spectrum
-`
 # Buy
-It's not coming back any time soon, so buy a few and store them in a safe place. Learn how to repair them by resoldering new switches.
+Despite its discontinuation, there isn't exactly a competitor that fills its place.
 
-Searched used listings on eBay, Craigslist, Kijiji, etc.
+The G600 isn't coming back, so buy a few and store them in a safe place. Follow the 3-2-1 rule of backups: 3 copies, 2 local, 1 off-site.
 
-Also look for Logicool G600 sold in Japan.
+Search used listings on eBay, Craigslist, Kijiji, etc. Look for Logicool G600 sold in Japan.
+
+Buy a broken one and repair it. Resoldering new switches is the main fix.
 
 # Repair
-
-## Testing
-XbitLabs has a few tests for your mouse.
-
-https://www.xbitlabs.com/mouse-speed-acceleration-test/
+## Teardown
+[Fictiv - Teardown Showdown: Logitech Gaming Mouse Edition G600 MMO vs G502 Proteus Core](https://www.fictiv.com/teardowns/teardown-showdown-logitech-gaming-mouse-edition-g600-mmo-vs-g502-proteus-spectrum)
 
 ## Skate pads
-To open up the mouse, there's a good chance you'll destroy the original skate pads, so order replacements before you get started.
+To open up the mouse, there's a chance you'll damage the original skate pads, so order some replacements before you get started.
 
-[Corepad Skatez 07919 - PRO 76](https://www.corepad.de/en/Corepad-Skatez-Logitech-Teflon-Mousefeet-Mouse-Feet-Hyperglides-Hyperglide/Corepad-Skatez-PRO-76-Mouse-Feet-Logitech-G600.html
-)
+[Corepad Skatez 07919 - PRO 76](https://www.corepad.de/en/Corepad-Skatez-Logitech-Teflon-Mousefeet-Mouse-Feet-Hyperglides-Hyperglide/Corepad-Skatez-PRO-76-Mouse-Feet-Logitech-G600.html)
 
 [Feetglide FG-077](https://feetglide.com/shop/glides/feetglide-skates-for-logitech-g600-fg-077/)
 
@@ -52,7 +48,7 @@ To open up the mouse, there's a good chance you'll destroy the original skate pa
 [Logitech G600 Scroll Wheel](https://www.printables.com/model/454993-logitech-g600-scroll-wheel)
 
 ## Keypad
-[Fix intermittent keypad](https://www.ifixit.com/Guide/How+to+fix+Logitech+G600+intermittent+keypad+buttons/155289)
+[iFixit - Fix intermittent keypad](https://www.ifixit.com/Guide/How+to+fix+Logitech+G600+intermittent+keypad+buttons/155289)
 
 ## USB Cable
 [Zerk Gaming Mods](https://zerkgamingmods.co.uk/product-category/mouse-cables/)
@@ -82,9 +78,42 @@ Strikes an important convention:
 View 1 -> Top of themouse
 View 2 -> Keypad on the side
 
+#### Settings
+Windows:
+```
+C:\Users[USERNAME]\AppData\Local\LGHUB\settings.db
+```
+#### Troubleshooting
+Update drivers from Device Manager ([Reddit](https://old.reddit.com/r/LogitechG/comments/w9tpji/g600_mouse_stuck_on_loading_resources/iq9gk14/?context=10000))
+
+Reinstall G Hub ([Reddit](https://old.reddit.com/r/LogitechG/comments/wpr5x6/g_hub_doesnt_recognize_g600_anymore/iki7jvq/?context=10000))
+1. Uninstall G HUB
+1. Make sure none of the G HUB components are running in the Task Manager
+1. Delete the following directories:
+    * `C:\Program Files\LGHUB`
+    * `C:\ProgramData\LGHUB`
+    * `C:\Users\<username>\AppData\Local\LGHUB`
+    * `C:\Users\<username>\AppData\Roaming\LGHUB`
+1. Delete registry key
+    * `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{521c89be-637f-4274-a840-baaf7460c2b2}`
+1. Reboot the PC
+1. Re-install G HUB.
+1. If issue persists, install Logitech Gaming Software.
+
 ### Logitech Gaming Software
 
 The original software that worked with the G600 when it was released. Works on Windows 11. Handy to have as a backup or even a main software.
+
+Download: ([Logitech](https://support.logi.com/hc/en-in/articles/360025298053-Logitech-Gaming-Software)) ([Archive](https://web.archive.org/web/20240327185302/https://support.logi.com/hc/en-in/articles/360025298053-Logitech-Gaming-Software))
+
+#### Logitech Support
+1. Getting started - G600 MMO Gaming Mouse Logitech ([Archive](https://archive.is/KmFZ8))
+1. G600 MMO Gaming Mouse [Logitech (Archive)](https://archive.is/MrZ1w)
+1. Using on-board memory or application detection with the G600 gaming mouse [Logitech (Archive)](https://archive.is/NbVXR)
+1. Configuring the G600 gaming mouse buttons [Logitech (Archive)](https://archive.is/BIEQe)
+
+#### M-series Mac
+1. [Andrew Imeson - Logitech G600 on M1 Mac](https://micro.andrewimeson.com/p/logitech_g600_m1_mac/)
 
 ### g600prog
 
@@ -92,12 +121,14 @@ Cross-platform scrip to program the G600 using Python: https://github.com/tulth/
 
 Install Python: https://www.python.org/downloads/
 
-Install prerequisite.
+Install prerequisite: 
+
 ```
 pip install pyusb
 ```
 
 Clone the repository.
+
 ```
 git clone https://github.com/tulth/g600prog
 cd g600prog
@@ -190,4 +221,30 @@ I honestly don't find it comfortable using G-Shift with any of the View 1 keys, 
 1. SG20 = NumpadEnter
 
 # Further Reading
-* [Mouse Guide 2.0: A list of mice with superior sensors and more.](https://geekhack.org/index.php?PHPSESSID=bcc2m478o7flnakttvcctp6qhse82q54&topic=56240.0)
+## Specifications
+Weight: 133 g
+
+Sensor: Broadcom / Avago S9808 / ADNS-9800
+* [Mouser](https://www.mouser.com/ProductDetail/Broadcom-Avago/ADNS-9800?qs=L%2FQzK8yiqlbEdsRjFWYizQ%3D%3D)
+* [kbjunky/ADNS-9800 Breakout Board](https://github.com/kbjunky/ADNS9800)
+
+DPI: 200 to 8200
+
+Polling rate: 1000 Hz
+
+USB VID_PID: `VID_046D&PID_C24A`
+1. [Logitech G600 MMO Gaming Mouse Technical Specifications](https://support.logi.com/hc/en-us/articles/360023465173-Logitech-G600-MMO-Gaming-Mouse-Technical-Specifications)
+1. [Mouse Specs - Logitech G600 MMO](https://mousespecs.org/logitech-g600-mmo/)
+
+## Reviews
+1. [Fstoppers - We Review The Logitech G600 Mouse: Photoshop Gamechanger](https://fstoppers.com/reviews/review-logitech-g600-mouse-photoshop-gamechanger-578082)
+1. [The Mary Sue - Review: Logitech’s G600 MMO Gaming Mouse Gives the Razer Naga a Run for Its Money](https://www.themarysue.com/review-logitech-g600-mmo-gaming-mouse/)
+1. [RTings - Logitech G600 MMO Gaming  Mouse Review](https://www.rtings.com/mouse/reviews/logitech/g600-mmo-gaming)
+1. [Custom PC Review - LOGITECH G600 MMO GAMING MOUSE REVIEW](https://www.custompcreview.com/reviews/logitech-g600-mmo-gaming-mouse-review/)
+1. [Overclockers Club - Logitech G600 MMO Gaming Mouse Review](https://www.overclockersclub.com/reviews/logitech_g600_mmogamingmouse/)
+1. [Gamers Nexus - Logitech G600 MMO Gaming Mouse Review](https://gamersnexus.net/hwreviews/1048-logitech-g600-mmo-mouse)
+1. [Slashgear - WHEN DID THE LOGITECH G600 ORIGINALLY COME OUT & HAS IT BEEN DISCONTINUED?](https://www.slashgear.com/1625874/logitech-g600-discontinued-when-did-come-out/)
+
+## General Mouse Resources
+1. [Mouse Guide 2.0: A list of mice with superior sensors and more.](https://geekhack.org/index.php?PHPSESSID=bcc2m478o7flnakttvcctp6qhse82q54&topic=56240.0)
+1. [XbitLabs - Mouse Speed & Acceleration Test](https://www.xbitlabs.com/mouse-speed-acceleration-test/)
